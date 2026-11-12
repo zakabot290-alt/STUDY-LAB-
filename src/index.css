@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-dark: #08090d;
+    --card-primary: #151720;
+    --card-secondary: #202333;
+    --accent-blue: #42a5e8;
+    --accent-purple: #9275ff;
+    --text-primary: #f5f6fa;
+    --text-secondary: #a0a5b5;
+    --success: #00e676;
+    --warning: #ffab40;
+    --danger: #ff5252;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html[dir="rtl"] {
+    font-family: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom scrollbar for compact mobile feel */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #202333;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #42a5e8;
+}
+
+/* Flashcard 3D perspective flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Pulse glow for focus ring & active quest */
+@keyframes ring-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(66, 165, 232, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(66, 165, 232, 0.45);
+  }
+}
+
+.animate-ring-glow {
+  animation: ring-glow 3s infinite ease-in-out;
+}

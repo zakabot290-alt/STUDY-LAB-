@@ -1,0 +1,8 @@
+{
+  "name": "STUDY LAB",
+  "description": "An offline-first Android learning platform combining academic study management, spaced repetition memory engine, deep focus timer, interactive brain gym, and RPG progression.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
